@@ -1,0 +1,119 @@
+table {
+  border: 1px solid #a2a9b1;
+  border-spacing: 3px;
+  background-color: #f8f9fa;
+  color: black;
+  margin: 0.5em 0 0.5em 1em;
+  padding: 0.2em;
+  float: right;
+  clear: right;
+  font-size: 88%;
+  line-height: 1.5em;
+  width: 22em;
+}
+table-subbox {
+  padding: 0;
+  border: none;
+  margin: -3px;
+  width: auto;
+  min-width: 100%;
+  font-size: 100%;
+  clear: none;
+  float: none;
+  background-color: transparent;
+}
+table td,
+table th {
+  vertical-align: top;
+  text-align: left;
+}
+table .infobox-above,
+table caption,
+.infobox-title {
+  font-size: 125%;
+  font-weight: bold;
+  text-align: center;
+}
+table caption,
+.infobox-title {
+  padding: 0.2em;
+}
+table .infobox-header,
+table .infobox-subheader,
+table .infobox-image,
+table .infobox-full-data,
+table .infobox-below {
+  text-align: center;
+}
+table .infobox-navbar {
+  text-align: right;
+}
+.infobox.bordered {
+  border-collapse: collapse;
+}
+.infobox.bordered td,
+.infobox.bordered th {
+  border: 1px solid #a2a9b1;
+}
+.infobox.bordered .borderless td,
+.infobox.bordered .borderless th {
+  border: 0;
+}
+.infobox.sisterproject {
+  width: 20em;
+  font-size: 90%;
+}
+.infobox.bordered .mergedtoprow td,
+.infobox.bordered .mergedtoprow th {
+  border: 0;
+  border-top: 1px solid #a2a9b1;
+  border-right: 1px solid #a2a9b1;
+}
+.infobox.bordered .mergedrow td,
+.infobox.bordered .mergedrow th {
+  border: 0;
+  border-right: 1px solid #a2a9b1;
+}
+.infobox.geography {
+  border-collapse: collapse;
+  line-height: 1.2em;
+  font-size: 90%;
+}
+.infobox.geography td,
+.infobox.geography th {
+  border-top: 1px solid #a2a9b1;
+  padding: 0.4em 0.6em 0.4em 0.6em;
+}
+.infobox.geography .mergedtoprow td,
+.infobox.geography .mergedtoprow th {
+  border-top: 1px solid #a2a9b1;
+  padding: 0.4em 0.6em 0.2em 0.6em;
+}
+.infobox.geography .mergedrow td,
+.infobox.geography .mergedrow th {
+  border: 0;
+  padding: 0 0.6em 0.2em 0.6em;
+}
+.infobox.geography .mergedbottomrow td,
+.infobox.geography .mergedbottomrow th {
+  border-top: 0;
+  border-bottom: 1px solid #a2a9b1;
+  padding: 0 0.6em 0.4em 0.6em;
+}
+.infobox.geography .maptable td,
+.infobox.geography .maptable th {
+  border: 0;
+  padding: 0;
+}
+@media print {
+  .infobox > * > tr > td,
+  .infobox > * > tr > th {
+    padding: 2px 5px;
+    border-bottom: 1px solid #eaecf0;
+  }
+  .infobox a,
+  .infobox > * > tr:last-child > th,
+  .infobox > * > tr:last-child > td {
+    border: 0;
+  }
+}
