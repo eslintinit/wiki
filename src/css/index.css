@@ -8,10 +8,11 @@ body {
   margin-top: 12px;
   cursor: pointer;
   margin-top: 12px;
-  top: 24px;
-  left: 32px;
   width: max-content;
   float: right;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 
 .ProseMirror {
@@ -171,4 +172,165 @@ table {
 
 table p {
   margin: 0.2rem 0 !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.folder-del {
+  visibility: hidden;
+}
+
+.folder:hover .folder-del {
+  visibility: visible;
+}
+
+#content {
+  width: 100%;
+}
+
+.folder:hover ._3dot {
+  display: block !important;
+}
+
+/* ._3dot { */
+/*   transform: rotate(90deg); */
+/* } */
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  height: 60px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background-color: #6851ff;
+  cursor: pointer;
+  transition: 0.2s;
+  will-change: transform;
+  box-sizing: border-box;
+  will-change: transform, color, background-color, border-color;
+  outline-width: 0;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #4e3bdb;
+  transform: scale(1.03);
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 40%);
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.oo-ui-tool-accel {
+  display: none !important;
+}
+
+.navbarof {
+  width: min-content;
+}
+
+.div-block-949 {
+  width: 44px;
+  max-width: 44px;
+}
+
+#content {
+  margin-top: -78px;
+}
+
+.ProseMirror {
+  padding-bottom: 600px;
+}
+
+#content {
+  z-index: -1;
+}
+
+.div-block-861-copy-copy {
+  z-index: 0;
+}
+
+.avablock-2.blj.w--current {
+  background-color: #5685e0 !important;
+}
+
+body {
+  /* font-size: 16px; */
+}
+
+.ProseMirror h1.is-editor-empty:first-child::before {
+  content: 'Title';
+  /* float: left; */
+  color: black;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ProseMirror p.is-empty::before {
+  /* content: 'Type something...'; */
+  /* float: left; */
+  color: black;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.del-icon {
+  visibility: hidden;
+}
+
+.image-wrapper:hover .del-icon {
+  visibility: visible;
+}
+
+.img-actions {
+  background: white;
+  padding: 0px 4px;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  visibility: hidden;
+  height: 26px;
+}
+
+.image-wrapper:hover .img-actions {
+  visibility: visible;
+}
+
+.hover-ef {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hover-ef:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
 }

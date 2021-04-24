@@ -1,6 +1,6 @@
 import { Node, mergeAttributes } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
-import Component from '../../editable'
+import Component from '../blocks/editable'
 
 export default Node.create({
   name: 'editableComponent',

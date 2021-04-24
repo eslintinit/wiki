@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import { AppContext } from 'context'
 
 import Header from './header'
 import Sidebar from './sidebar'
 import Rightbar from './rightbar'
 
 export default function Layout({ children }) {
-  const [showSidebar, setShowSidebar] = useState(false)
-  const [showRightbar, setShowRightbar] = useState(false)
+  const {
+    showSidebar,
+    showRightbar,
+    setShowSidebar,
+    setShowRightbar,
+  } = useContext(AppContext)
 
   return (
     <div

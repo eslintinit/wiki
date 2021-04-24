@@ -6,14 +6,6 @@
 /* ==========================================================================
    Start of base Webflow CSS - If you're looking for some ultra-clean CSS, skip the boilerplate and see the unminified code below.
    ========================================================================== */
-body {
-  /* font-family: 'proxima-nova', sans-serif; */
-  font-size: 17px;
-}
-
-* {
-  /* font-family: 'proxima-nova', sans-serif !important; */
-}
 
 @font-face {
   font-family: 'webflow-icons';
@@ -201,15 +193,6 @@ html[data-w-dynpage] [data-w-cloak] {
   visibility: visible !important;
   opacity: 1 !important;
   vertical-align: middle !important;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 h1 {
   font-size: 38px;

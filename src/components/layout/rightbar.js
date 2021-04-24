@@ -1,8 +1,9 @@
 import { useContext } from 'react'
-import { EditorContext } from '../context'
+import { EditorContext, FoldersContext } from 'context'
 
 export default function Rightbar({ setShowRightbar }) {
   const { editor } = useContext(EditorContext)
+  const { addNote, publishPage } = useContext(FoldersContext)
 
   return (
     <div
@@ -11,7 +12,13 @@ export default function Rightbar({ setShowRightbar }) {
       style={{ display: 'flex', position: 'fixed' }}
     >
       <div className="div-block-1043">
-        <div className="kerou-3">
+        <div
+          className="kerou-3 pointer"
+          onClick={() => {
+            setShowRightbar(false)
+            addNote()
+          }}
+        >
           <img
             src="https://uploads-ssl.webflow.com/603d12d60cce95ce28fa8a69/603d12d60cce9541a9fa8c51_file-plus-2.svg"
             width={26}
@@ -20,7 +27,7 @@ export default function Rightbar({ setShowRightbar }) {
           />
           <div className="text-block-248 eg">New</div>
         </div>
-        <div className="kerou-3">
+        <div className="kerou-3 pointer" onClick={publishPage}>
           <img
             src="https://uploads-ssl.webflow.com/603d12d60cce95ce28fa8a69/603d12d60cce95cff3fa8cf0_external-link.svg"
             width={26}
@@ -30,10 +37,9 @@ export default function Rightbar({ setShowRightbar }) {
           <div className="text-block-248">Share</div>
         </div>
         <div
-          className="kerou-3"
+          className="kerou-3 pointer"
           data-ix="new-interaction-19"
           onClick={() => setShowRightbar(false)}
-          style={{ cursor: 'pointer' }}
         >
           <img
             src="https://uploads-ssl.webflow.com/603d12d60cce95ce28fa8a69/603d12d60cce9521effa8cec_icon-x.svg"

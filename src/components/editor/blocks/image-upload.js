@@ -1,6 +1,8 @@
 import S3 from 'react-aws-s3'
 import { useState } from 'react'
 import { NodeViewWrapper } from '@tiptap/react'
+import EditIcon from '@material-ui/icons/Edit'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 const config = {
   bucketName: 'wikieditor',
@@ -24,13 +26,12 @@ const App = (props) => {
   const [dataUri, setDataUri] = useState(props.node.attrs.imageUri || '')
   const [showFullscreen, setShowFullscreen] = useState(false)
   const [loading, setLoading] = useState(false)
-  console.log(props.getPos())
-  console.log(props)
 
   const deleteNode = () => {
-    alert('delete block (word in progress)')
-    // props.editor.commands.deleteRange(8, 20)
-    // console.log('yo')
+    // console.log(props.editor.getHTML())
+    // props.editor.view.state
+
+    props.editor.commands.deleteImage(props.getPos())
   }
 
   const onChange = (file) => {
@@ -47,13 +48,15 @@ const App = (props) => {
         props.updateAttributes({
           imageUri: data.location,
         })
+        setDataUri(data.location)
       })
       .catch((err) => console.error(err))
 
     fileToDataUri(file).then((dataUri) => {
-      props.updateAttributes({
-        imageUri: dataUri,
-      })
+      // props.updateAttributes({
+      //   imageUri: dataUri,
+      // })
+      // setLoading(false)
       setDataUri(dataUri)
     })
   }
@@ -112,9 +115,29 @@ const App = (props) => {
             )}
             {dataUri ? (
               <div className="image-wrapper">
-                {/*
+                <div className="img-actions flex flex-row">
+                  <div className="pointer hover-ef">
+                    <EditIcon
+                      color="white"
+                      fontSize="small"
+                      onClick={() => {
+                        setDataUri(null)
+                        props.updateAttributes({
+                          imageUri: null,
+                        })
+                      }}
+                    />
+                  </div>
+                  {/**/}
+                  <div className="pointer hover-ef">
+                    <DeleteIcon onClick={deleteNode} fontSize="small" />
+                  </div>
+                  {/*
                 <img src="/del.png" className="del-icon" onClick={deleteNode} />
-                */}
+*/}
+                </div>
+                {/*
+                 */}
                 <img
                   width="200"
                   height="auto"
@@ -155,9 +178,6 @@ const App = (props) => {
               </div>
             )}
           </div>
-          {/*
-          <NodeViewContent as="div" className="thumbcaption" />
-          */}
           <div className="thumbcaption">
             <input
               placeholder="caption..."

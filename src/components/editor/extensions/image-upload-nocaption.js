@@ -1,6 +1,6 @@
 import { Node, mergeAttributes } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
-import Component from '../../../components/image-upload-nocaption'
+import Component from '../blocks/image-upload-nocaption'
 
 export default Node.create({
   name: 'justImageComponent',

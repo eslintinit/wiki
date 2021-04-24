@@ -1,6 +1,6 @@
 import { Node, mergeAttributes } from '@tiptap/core'
 import { ReactNodeViewRenderer } from '@tiptap/react'
-import Component from '../../../components/counter'
+import Component from '../blocks/counter'
 
 export default Node.create({
   name: 'reactComponent',
