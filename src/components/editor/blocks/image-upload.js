@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { NodeViewWrapper } from '@tiptap/react'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
+import FullscreenIcon from '@material-ui/icons/Fullscreen'
 
 const config = {
   bucketName: 'wikieditor',
@@ -61,6 +62,125 @@ const App = (props) => {
     })
   }
 
+  return (
+    <NodeViewWrapper className="image">
+      <div className="thumb tright">
+        <div className="thumbinner" style={{ width: '222px' }}>
+          {showFullscreen && (
+            <div
+              style={{
+                position: 'fixed',
+                width: '100vw',
+                height: '100vh',
+                top: 0,
+                left: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'black',
+                zIndex: 120,
+              }}
+              onClick={() => setShowFullscreen(false)}
+              className="fullscreen-mode"
+            >
+              <img
+                src="/del.png"
+                className="del-icon del-icon-large"
+                onClick={() => setShowFullscreen(false)}
+                style={{
+                  filter: 'invert(100%)',
+                }}
+              />
+              <img
+                src={dataUri}
+                alt="smth"
+                // style={{
+                //   height: '100%',
+                //   width: 'auto',
+                // }}
+                style={{
+                  // cursor: 'pointer',
+                  height: '100%',
+                  width: 'auto',
+                }}
+              />
+            </div>
+          )}
+          {dataUri ? (
+            <div className="image-wrapper">
+              <div className="img-actions flex flex-row">
+                <div className="pointer hover-ef">
+                  <FullscreenIcon
+                    color="white"
+                    fontSize="small"
+                    onClick={() => setShowFullscreen(!showFullscreen)}
+                  />
+                </div>
+                <div className="pointer hover-ef">
+                  <EditIcon
+                    color="white"
+                    fontSize="small"
+                    onClick={() => {
+                      setDataUri(null)
+                      props.updateAttributes({
+                        imageUri: null,
+                      })
+                    }}
+                  />
+                </div>
+                {/**/}
+                <div className="pointer hover-ef">
+                  <DeleteIcon onClick={deleteNode} fontSize="small" />
+                </div>
+                {/*
+                <img src="/del.png" className="del-icon" onClick={deleteNode} />
+*/}
+              </div>
+              {/*
+               */}
+              <img
+                width="200"
+                height="auto"
+                src={dataUri}
+                alt="avatar"
+                onClick={() => setShowFullscreen(!showFullscreen)}
+                style={{ cursor: 'pointer' }}
+              />
+            </div>
+          ) : loading ? (
+            <div
+              style={{
+                width: '100%',
+                height: 200,
+                border: '1px solid black',
+                // display: 'flex',
+                // flexDirection: 'column',
+                // alignItems: 'center',
+              }}
+            >
+              loading...
+            </div>
+          ) : (
+            <div
+              style={{
+                width: '100%',
+                height: 200,
+                border: '1px solid black',
+                // display: 'flex',
+                // flexDirection: 'column',
+                // alignItems: 'center',
+              }}
+            >
+              <input
+                type="file"
+                onChange={(event) => onChange(event.target.files[0] || null)}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </NodeViewWrapper>
+  )
   return (
     <NodeViewWrapper className="image">
       <div className="thumb tright">

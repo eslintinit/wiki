@@ -50,7 +50,10 @@ const Notes = () => {
               width={19}
               alt=""
               className="image-312-copy"
-              onClick={() => addNote()}
+              onClick={() => {
+                addNote()
+                setShowSidebar(false)
+              }}
             />
           </div>
         </div>

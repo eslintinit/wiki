@@ -77,6 +77,7 @@ const App = (props) => {
             zIndex: 120,
           }}
           onClick={() => setShowFullscreen(false)}
+          className="fullscreen-mode"
         >
           <img
             src={dataUri}
@@ -96,26 +97,28 @@ const App = (props) => {
       )}
       {dataUri ? (
         <div className="image-wrapper">
-          <div className="img-actions flex flex-row">
-            <div className="pointer hover-ef">
-              <EditIcon
-                color="white"
-                fontSize="small"
-                onClick={() => {
-                  setDataUri(null)
-                  props.updateAttributes({
-                    imageUri: null,
-                  })
-                }}
-              />
-            </div>
-            <div className="pointer hover-ef">
-              <DeleteIcon onClick={deleteNode} fontSize="small" />
-            </div>
-            {/*
+          {props.editor.options.editable && (
+            <div className="img-actions flex flex-row">
+              <div className="pointer hover-ef">
+                <EditIcon
+                  color="white"
+                  fontSize="small"
+                  onClick={() => {
+                    setDataUri(null)
+                    props.updateAttributes({
+                      imageUri: null,
+                    })
+                  }}
+                />
+              </div>
+              <div className="pointer hover-ef">
+                <DeleteIcon onClick={deleteNode} fontSize="small" />
+              </div>
+              {/*
                 <img src="/del.png" className="del-icon" onClick={deleteNode} />
 */}
-          </div>
+            </div>
+          )}
           <img
             width="200"
             height="auto"

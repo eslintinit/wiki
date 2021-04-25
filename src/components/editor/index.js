@@ -11,7 +11,7 @@ export default function Tiptap() {
     <div>
       <Menu />
 
-      <div style={{ marginTop: 48 }}>
+      <div style={{ marginTop: 92 }}>
         <EditorContent editor={editor} />
       </div>
     </div>

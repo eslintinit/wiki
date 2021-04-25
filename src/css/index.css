@@ -334,3 +334,40 @@ body {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 100%;
 }
+
+.thumbinner {
+  cursor: grab;
+}
+
+.ProseMirror img {
+  float: right;
+  max-width: 222px;
+  border: 1px solid #c8ccd1;
+  padding: 3px;
+  background: #f8f9fa;
+  margin-left: 16px;
+}
+
+.fullscreen-mode img {
+  max-width: initial;
+}
+
+.oo-ui-toolbar-bar {
+  width: 100%;
+}
+
+.toolbar-wrapper {
+  position: fixed;
+  top: 0;
+  width: 70vw;
+  background: white;
+  z-index: 1;
+  padding: 12px 0;
+}
+
+.image-wrapper img {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+  max-width: initial;
+}

@@ -4153,10 +4153,6 @@ legend {
     padding: 2px 0;
     font-size: 12pt;
   }
-  table ol li,
-  table ul li {
-    font-size: inherit;
-  }
   .toc {
     page-break-before: avoid;
     page-break-after: avoid;
@@ -4679,36 +4675,6 @@ legend {
   .magnify {
     display: none;
   }
-  .wikitable {
-    background: #fff;
-    margin: 1em 0;
-    border: 1pt solid #aaa;
-    border-collapse: collapse;
-    font-size: 10pt;
-    page-break-inside: avoid;
-  }
-  .wikitable > caption {
-    padding: 5px;
-    font-size: 10pt;
-  }
-  .wikitable > tr > th,
-  .wikitable > tr > td,
-  .wikitable > * > tr > th,
-  .wikitable > * > tr > td {
-    background: #fff !important;
-    color: #000 !important;
-    border: 1pt solid #aaa;
-    padding: 0.4em 0.6em;
-  }
-  .wikitable > tr > th,
-  .wikitable > * > tr > th {
-    text-align: center;
-  }
-  table.listing,
-  table.listing td {
-    border: 1pt solid #000;
-    border-collapse: collapse;
-  }
   .catlinks ul {
     display: inline;
     padding: 0;
@@ -5110,9 +5076,6 @@ legend {
     overflow-x: hidden;
     word-wrap: break-word;
   }
-  table {
-    font-size: 100%;
-  }
   fieldset {
     border: 1px solid #2a4b8d;
     margin: 1em 0 1em 0;
@@ -5390,28 +5353,6 @@ legend {
   a.new {
     color: #ba0000;
   }
-  .wikitable {
-    background-color: #f8f9fa;
-    color: #202122;
-    margin: 1em 0;
-    border: 1px solid #a2a9b1;
-    border-collapse: collapse;
-  }
-  .wikitable > tr > th,
-  .wikitable > tr > td,
-  .wikitable > * > tr > th,
-  .wikitable > * > tr > td {
-    border: 1px solid #a2a9b1;
-    padding: 0.2em 0.4em;
-  }
-  .wikitable > tr > th,
-  .wikitable > * > tr > th {
-    background-color: #eaecf0;
-    text-align: center;
-  }
-  .wikitable > caption {
-    font-weight: bold;
-  }
   .error,
   .warning,
   .success {
@@ -5442,24 +5383,6 @@ legend {
   }
   .visualClear {
     clear: both;
-  }
-  .mw-datatable {
-    border: 1px solid #a2a9b1;
-    border-collapse: collapse;
-  }
-  .mw-datatable td,
-  .mw-datatable th {
-    border: 1px solid #a2a9b1;
-    padding: 0.2em 0.4em;
-  }
-  .mw-datatable th {
-    background-color: #eaeeff;
-  }
-  .mw-datatable td {
-    background-color: #fff;
-  }
-  .mw-datatable tr:hover td {
-    background-color: #eaf3ff;
   }
   .mw-ajax-loader {
     background-image: url(https://wikipedia.org/w/resources/src/mediawiki.skinning/images/ajax-loader.gif?57f34);

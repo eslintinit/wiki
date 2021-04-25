@@ -16,6 +16,7 @@ import ImageUploadExtension from '../components/editor/extensions/image-upload'
 import ImageUploadNoCaptionExtension from '../components/editor/extensions/image-upload-nocaption'
 import CounterExtension from '../components/editor/extensions/counter'
 import EditableExtension from '../components/editor/extensions/editable'
+import TableOfContentExtension from '../components/editor/extensions/toc'
 
 import Image from '@tiptap/extension-image'
 import Dropcursor from '@tiptap/extension-dropcursor'
@@ -26,6 +27,12 @@ export const CustomDocument = Node.create({
   name: 'doc',
   topNode: true,
   content: 'heading block+',
+})
+
+const CustomImage = Image.extend({
+  draggable: false,
+  isolating: true,
+  atom: true,
 })
 
 const EditorContext = createContext()
@@ -78,6 +85,7 @@ const EditorProvider = ({ children }) => {
       ImageUploadExtension,
       ImageUploadNoCaptionExtension,
       EditableExtension,
+      TableOfContentExtension,
       Placeholder,
       // Placeholder.configure({
       //   // showOnlyCurrent: false,
@@ -97,9 +105,10 @@ const EditorProvider = ({ children }) => {
     // content: defaultContent,
     // onUpdate() {
     //   const editorState = this.getHTML()
+    //   console.log(editorState)
     //   // console.log('current note')
     //   // console.log(currentNote)
-    //   changeNote(selectedNote, editorState)
+    //   // changeNote(selectedNote, editorState)
     //   // window.localStorage.setItem(`note${selectedNote}`, editorState)
     // },
   })
@@ -110,6 +119,8 @@ const EditorProvider = ({ children }) => {
       console.log(selectedNote)
       editor.off('update')
       editor.on('update', () => {
+        console.log('upd')
+        console.log(editor.getHTML())
         const content = editor.getHTML()
         window.localStorage.setItem(`note${selectedNote}`, content)
       })

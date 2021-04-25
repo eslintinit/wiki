@@ -5,7 +5,7 @@ import Header from './header'
 import Sidebar from './sidebar'
 import Rightbar from './rightbar'
 
-export default function Layout({ children }) {
+export default function Layout({ children, hideLayout = false }) {
   const {
     showSidebar,
     showRightbar,
@@ -22,12 +22,14 @@ export default function Layout({ children }) {
     >
       {showSidebar && <Sidebar />}
       <div className="div-block-861-copy-copy">
-        <Header
-          showSidebar={showSidebar}
-          showRightbar={showRightbar}
-          setShowRightbar={setShowRightbar}
-          setShowSidebar={setShowSidebar}
-        />
+        {!hideLayout && (
+          <Header
+            showSidebar={showSidebar}
+            showRightbar={showRightbar}
+            setShowRightbar={setShowRightbar}
+            setShowSidebar={setShowSidebar}
+          />
+        )}
 
         {showRightbar && <Rightbar setShowRightbar={setShowRightbar} />}
         <div id="content" className="mw-body" role="main">

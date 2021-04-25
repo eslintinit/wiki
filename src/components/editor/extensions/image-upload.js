@@ -8,13 +8,13 @@ export default Node.create({
 
   group: 'block',
 
-  content: 'inline*',
+  content: 'block+',
 
   atom: true,
-  selectable: false,
+  selectable: true,
   draggable: true,
-  isolating: true,
-  allowGapCursor: false,
+  // isolating: true,
+  // allowGapCursor: false,
 
   addAttributes() {
     return {
@@ -29,6 +29,9 @@ export default Node.create({
 
   addCommands() {
     return {
+      // moveUp: () => ({ tr }) => {
+
+      // },
       deleteImage: (pos) => ({ tr }) => {
         return tr.delete(pos, pos + 1)
       },
