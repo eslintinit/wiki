@@ -25,7 +25,17 @@ export default function Counter(props) {
     })
   }
 
-  const content = eval(props.node.attrs.content)
+  let content
+  try {
+    content = eval(props.node.attrs.content)
+  } catch (e) {
+    if (e instanceof SyntaxError) {
+      console.log('error')
+    }
+  }
+
+  if (!content) return null
+  // const content = eval(props.node.attrs.content)
 
   return (
     <NodeViewWrapper className="react-component">

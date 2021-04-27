@@ -16,11 +16,6 @@ const FoldersProvider = ({ children }) => {
       ? folders.find((folder) => folder.id === selectedFolder).notes
       : [],
   )
-  const [currentNote, setCurrentNote] = useState(
-    folders
-      .find((f) => f.id === selectedFolder)
-      .notes.find((n) => n.id === selectedNote),
-  )
 
   useEffect(() => {
     // alert('selectedNote' + selectedNote)
@@ -198,10 +193,6 @@ const FoldersProvider = ({ children }) => {
         setNotes,
         publishPage,
         changeFolder,
-        currentNote: folders
-          .find((f) => f.id === selectedFolder)
-          .notes.find((n) => n.id === selectedNote),
-        setCurrentNote,
       }}
     >
       {children}

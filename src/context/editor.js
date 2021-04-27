@@ -54,20 +54,7 @@ const EditorProvider = ({ children }) => {
   const { folders, changeNote, selectedNote, selectedFolder } = useContext(
     FoldersContext,
   )
-  const [currentNote, setCurrentNote] = useState(
-    folders
-      .find((f) => f.id === selectedFolder)
-      .notes.find((n) => n.id === selectedNote),
-  )
   const [localSelectedNote, setLocalSelectedNote] = useState(selectedNote)
-
-  useEffect(() => {
-    setCurrentNote(
-      folders
-        .find((f) => f.id === selectedFolder)
-        .notes.find((n) => n.id === selectedNote),
-    )
-  }, [folders, selectedNote, selectedFolder])
 
   const editor = useEditor({
     autofocus: 'start',
@@ -87,30 +74,8 @@ const EditorProvider = ({ children }) => {
       EditableExtension,
       TableOfContentExtension,
       Placeholder,
-      // Placeholder.configure({
-      //   // showOnlyCurrent: false,
-      //   placeholder: 'empty',
-      //   // placeholder: ({ node }) => {
-      //   //   console.log(node)
-      //   //   if (node.type.name === 'title') {
-      //   //     return 'Give me a name'
-      //   //   }
-      //   //   return 'Write something'
-      //   // },
-      // }),
     ],
     content: '',
-    // content:
-    //   window.localStorage.getItem(`note${selectedNote}`) || currentNote.body,
-    // content: defaultContent,
-    // onUpdate() {
-    //   const editorState = this.getHTML()
-    //   console.log(editorState)
-    //   // console.log('current note')
-    //   // console.log(currentNote)
-    //   // changeNote(selectedNote, editorState)
-    //   // window.localStorage.setItem(`note${selectedNote}`, editorState)
-    // },
   })
 
   useEffect(() => {

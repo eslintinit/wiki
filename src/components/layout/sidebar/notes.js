@@ -11,7 +11,6 @@ const Notes = () => {
     addNote,
     deleteNote,
     notes,
-    setCurrentNote,
   } = useContext(FoldersContext)
   const { setShowSidebar } = useContext(AppContext)
 
@@ -65,11 +64,6 @@ const Notes = () => {
             onClick={() => {
               setSelectedNote(note.id)
               setShowSidebar(false)
-              // setCurrentNote(
-              //   folders
-              //     .find((f) => f.id === selectedFolder)
-              //     .notes.find((n) => n.id === note.id),
-              // )
             }}
             key={note.id}
             style={{ paddingRight: 10 }}

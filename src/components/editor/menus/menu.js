@@ -144,16 +144,33 @@ export default function Menu() {
                             }
                             toc.push(tocItem)
                           })
+
                           let content
 
+                          console.log(firstHeading)
                           if (firstHeading > -1) {
+                            // alert('ok')
+                            console.log('toc')
+                            console.log('toc')
+                            console.log('toc')
+                            console.log('toc')
+                            console.log('toc')
+                            console.log(toc)
+                            console.log(JSON.stringify(toc))
+                            console.log(JSON.stringify(toc))
+                            console.log(JSON.stringify(toc))
+                            console.log(JSON.stringify(toc))
                             content =
                               initStr.substring(0, firstHeading) +
-                              `<toc content='${JSON.stringify(toc)}'></toc>` +
+                              `<toc content='${JSON.stringify(toc)
+                                .replaceAll("'", '&#39;')
+                                .replaceAll('"', '&#34;')}'></toc>` +
                               initStr.substring(firstHeading)
                           } else {
+                            // alert('else ????????')
                             content = initStr
                           }
+                          console.log(content)
 
                           // HERE GOES PUBLISHING
                           const title = content.substring(
